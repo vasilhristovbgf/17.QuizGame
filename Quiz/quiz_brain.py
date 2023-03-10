@@ -11,16 +11,16 @@ class QuizBrain:
         return player_answer
 
     def still_has_questions(self):
+
         if self.question_number < len(self.question_list):
             return True
+        elif self.question_number == len(self.question_list):
+            return False
 
     def is_correct(self, pl_answ, q_list, q_num):
         if pl_answ == q_list[q_num].answer:
             print("That's Correct!")
-            if self.question_number < len(self.question_list):
-                self.question_number += 1
-            elif self.question_number == len(self.question_list):
-                print("Congratulations! You win!")
+            self.question_number += 1
             return True
         else:
             print("Wrong answer!")
